@@ -1,0 +1,19 @@
+#include "lists.h"
+
+
+
+int check_cycle(listint_t *list)
+{
+struct listint_s* next_node = list;
+struct listint_s* next_two_node = list;
+
+while(next_two_node != NULL && next_two_node->next != NULL)
+{
+next_node = next_node->next;
+next_two_node = next_two_node->next->next;
+
+if(next_node == next_two_node)
+return 1;
+}
+return 0;
+}
