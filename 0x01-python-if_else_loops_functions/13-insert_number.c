@@ -18,9 +18,16 @@ return (NULL);
 new_node->n = number;
 new_node->next = NULL;
 
+if (sorted_list == NULL || sorted_list->n >= number)
+{
+new_node->next = sorted_list;
+*head = sorted_list;
+return (new_node);
+}
+
 while (sorted_list->next != NULL)
 {
-if (sorted_list->n < number &&
+if (sorted_list && sorted_list->n < number &&
 (sorted_list->next->n > number || sorted_list->next == NULL))
 {
 new_node->next = sorted_list->next;
