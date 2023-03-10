@@ -1,3 +1,2 @@
 #!/usr/bin/python3
-__name__ == "__main__"
 print("#pythoniscool")
