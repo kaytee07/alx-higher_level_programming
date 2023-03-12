@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 listint_t *list1 = *head;
 listint_t *list2 = *head;
 int total = 1, j = 0;
-if (list1 == NULL || list2->next == NULL)
+ if (*head == NULL || (*head)->next == NULL)
 return (1);
 
 while (list1->next != NULL)
