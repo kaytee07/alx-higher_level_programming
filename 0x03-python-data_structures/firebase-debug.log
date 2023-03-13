@@ -1,0 +1,83 @@
+[debug] [2023-03-13T13:20:24.142Z] ----------------------------------------------------------------------
+[debug] [2023-03-13T13:20:24.144Z] Command:       /usr/local/bin/node /usr/local/bin/firebase login
+[debug] [2023-03-13T13:20:24.145Z] CLI Version:   11.24.1
+[debug] [2023-03-13T13:20:24.145Z] Platform:      linux
+[debug] [2023-03-13T13:20:24.145Z] Node Version:  v19.0.0
+[debug] [2023-03-13T13:20:24.145Z] Time:          Mon Mar 13 2023 13:20:24 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-03-13T13:20:24.145Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-13T13:20:24.147Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] i  Firebase optionally collects CLI and Emulator Suite usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+ 
+[debug] [2023-03-13T13:20:25.915Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-03-13T13:20:25.917Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-03-13T13:40:08.151Z] ----------------------------------------------------------------------
+[debug] [2023-03-13T13:40:08.152Z] Command:       /usr/local/bin/node /usr/local/bin/firebase init functions
+[debug] [2023-03-13T13:40:08.153Z] CLI Version:   11.24.1
+[debug] [2023-03-13T13:40:08.153Z] Platform:      linux
+[debug] [2023-03-13T13:40:08.153Z] Node Version:  v19.0.0
+[debug] [2023-03-13T13:40:08.153Z] Time:          Mon Mar 13 2023 13:40:08 GMT+0000 (Greenwich Mean Time)
+[debug] [2023-03-13T13:40:08.153Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-13T13:40:08.159Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-13T13:40:08.159Z] > authorizing via signed-in user (kofi.taylor07@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /home/the-alchemist/Project/ALX/alx-higher_level_programming/0x03-python-data_structures
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-03-13T13:40:14.582Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2023-03-13T13:40:15.819Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2023-03-13T13:40:15.819Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project betsolution-6e70e (Betsolution) 
+[info] 
+=== Functions Setup
+[debug] [2023-03-13T13:40:22.955Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-13T13:40:22.956Z] > authorizing via signed-in user (kofi.taylor07@gmail.com)
+[debug] [2023-03-13T13:40:22.956Z] [iam] checking project betsolution-6e70e for permissions ["firebase.projects.get"]
+[debug] [2023-03-13T13:40:22.958Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/betsolution-6e70e:testIamPermissions [none]
+[debug] [2023-03-13T13:40:22.959Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/betsolution-6e70e:testIamPermissions x-goog-quota-user=projects/betsolution-6e70e
+[debug] [2023-03-13T13:40:22.959Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/betsolution-6e70e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-13T13:40:24.390Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/betsolution-6e70e:testIamPermissions 200
+[debug] [2023-03-13T13:40:24.390Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/betsolution-6e70e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2023-03-13T13:40:24.391Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-03-13T13:40:24.391Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/betsolution-6e70e
+[debug] [2023-03-13T13:40:24.393Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/runtimeconfig.googleapis.com [none]
+[debug] [2023-03-13T13:40:24.394Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/betsolution-6e70e
+[debug] [2023-03-13T13:40:25.924Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-03-13T13:40:25.924Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2023-03-13T13:40:25.925Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2023-03-13T13:40:25.925Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/betsolution-6e70e
+[debug] [2023-03-13T13:40:25.963Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/runtimeconfig.googleapis.com 200
+[debug] [2023-03-13T13:40:25.964Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2023-03-13T13:40:27.572Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2023-03-13T13:40:27.572Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2023-03-13T13:40:37.578Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com [none]
+[debug] [2023-03-13T13:40:37.579Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/betsolution-6e70e
+[debug] [2023-03-13T13:40:38.926Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com 200
+[debug] [2023-03-13T13:40:38.927Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/betsolution-6e70e/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] ✔  Wrote functions/package.json 
+[info] ✔  Wrote functions/index.js 
+[info] ✔  Wrote functions/.gitignore 
