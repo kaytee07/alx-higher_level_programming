@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 listint_t *list1 = *head;
 listint_t *list2 = *head;
 int total = 1, j = 0;
-if (*head == NULL || (*head)->next == NULL)
+ if (*head == NULL || (*head)->next == NULL)
 return (1);
 
 while (list1->next != NULL)
@@ -22,19 +22,6 @@ list1 = list1->next;
 }
 list1 = *head;
 total = (int) total / 2;
- 
-if(total == 1)
-{
-if (list1->n == list2->next->n)
-{
-return (1);
-}
-else
-{
-return (0);
-}
-}
- 
 while (total > 0)
 {
 list2 = *head;
