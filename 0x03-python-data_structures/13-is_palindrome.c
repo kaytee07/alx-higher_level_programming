@@ -6,7 +6,7 @@
  * @head: head of the list about to be reversed
  * Return: head of linked list
  */
-listint_t *reverseList(listint_t *head)
+/*listint_t *reverseList(listint_t *head)
 {
 listint_t *prev = NULL;
 listint_t *curr = head;
@@ -20,7 +20,7 @@ curr = next;
 }
 return (prev);
 }
-
+*/
 /**
  * is_palindrome - check if a reversed_list is same as unreversed
  * @head: pointer to the head of the linked list
