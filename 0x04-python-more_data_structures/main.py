@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-uniq_add = __import__('2-uniq_add').uniq_add
+number_keys = __import__('5-number_keys').number_keys
 
-my_list = [1, 2, 3, 1, 4, 2, 5]
-result = uniq_add(my_list)
-print("Result: {:d}".format(result))
+a_dictionary = { 'language': "C", 'number': 13, 'track': "Low level" }
+nb_keys = number_keys(a_dictionary)
+print("Number of keys: {:d}".format(nb_keys))
