@@ -8,7 +8,7 @@ class Square:
         """
         assign size to priv variable and raise excption if needed
         Args:
-             size: size of the square              
+             size: size of the square
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
