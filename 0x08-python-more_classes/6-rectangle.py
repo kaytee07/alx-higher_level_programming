@@ -3,9 +3,9 @@
 
 
 class Rectangle:
+    """this is a class rectangle"""
     number_of_instances = 0
 
-    """this is a class rectangle"""
     def __init__(self, width=0, height=0):
         """a constructor that set instance attribue height and width"""
         self.width = width
