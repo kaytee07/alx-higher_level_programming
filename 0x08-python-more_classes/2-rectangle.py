@@ -3,6 +3,7 @@
 
 
 class Rectangle:
+    """class returns the area and perimeter of rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height

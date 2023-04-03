@@ -3,6 +3,7 @@
 
 
 class Rectangle:
+    """class set and retrieves the width and height of the triangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
