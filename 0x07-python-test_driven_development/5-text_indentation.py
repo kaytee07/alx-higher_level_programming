@@ -1,5 +1,7 @@
 #!/usr/bin/python3
+""" This fuction indent text after every . ? :"""
 def text_indentation(text):
+    """receives test and indent after every . ? :"""
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 

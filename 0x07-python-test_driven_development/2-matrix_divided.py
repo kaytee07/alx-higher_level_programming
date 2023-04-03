@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-
+"""divede numbers within 2d matrix"""
 def matrix_divided(matrix, div):
+    """ Goes through matrix and divide each number by divisor"""
     for i in range(len(matrix)):
         for j in matrix[i]:
             if type(j) not in [float, int]:
