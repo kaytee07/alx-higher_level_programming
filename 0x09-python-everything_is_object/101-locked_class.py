@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """locked class"""
+
+
 class LockedClass:
     def __init__(self):
         self.__locked = False
@@ -19,4 +21,4 @@ class LockedClass:
         self.__locked = True
 
     def unlock(self):
-        self.__locked = False   
+        self.__locked = False
