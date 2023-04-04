@@ -2,12 +2,7 @@
 """print magic string"""
 
 
+#!/usr/bin/python3
 def magic_string():
-    """print magic string"""
-    if not hasattr(magic_string, 'counter'):
-        magic_string.counter = 1
-    else:
-        magic_string.counter += 1
-
-    result = "BestSchool" * magic_string.counter
-    return result
+    magic_string.n = getattr(magic_string, 'n', 0) + 1
+    return ("BestSchool, " * (magic_string.n - 1) + "BestSchool")
