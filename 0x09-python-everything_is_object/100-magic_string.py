@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """print magic string"""
+
+
 def magic_string():
     """print magic string"""
     if not hasattr(magic_string, 'counter'):
