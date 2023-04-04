@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+"""the queens gambit"""
+
+class NQueensN:
+    def __init__(self, n):
+        self.n = n
+        self.board = [[0]*n for _ in range(n)]
+        self.solutions = []
+
+    def solve(self):
+        self._solve_helper(0)
+
+    def _solve_helper(self, row):
+        if row == self.n:
+            solution = []
+            for i in range(self.n):
+                solution.append(self.board[i][:])
+            self.solutions.append(solution)
+            return
+
+        for col in range(self.n):
+            if self._is_valid(row, col):
+                self.board[row][col] = 1
+                self._solve_helper(row+1)
+                self.board[row][col] = 0
+
+    def _is_valid(self, row, col):
+        for i in range(col):
+            if self.board[row][i] == 1:
+                return False
+
+        for i, j in zip(range(row-1, -1, -1), range(col-1, -1, -1)):
+            if self.board[i][j] == 1:
+                return False
+
+                                            
+        for i, j in zip(range(row+1, self.n), range(col-1, -1, -1)):
+            if self.board[i][j] == 1:
+                return False
+
+            return True
