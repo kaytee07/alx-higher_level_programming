@@ -1,13 +1,11 @@
 #!/usr/bin/python3
-"""project on adding integers"""
+"""this is a script that adds to integers passed to it"""
 
 
 def add_integer(a, b=98):
-    """accept twi integers and adds them"""
-    if type(a) not in [int, float]:
+    """this function accept two arguments and adds them"""
+    if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
-    if type(b) not in [int, float]:
+    if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    a = int(a)
-    b = int(b)
-    return a + b
+    return int(a) + int(b)
