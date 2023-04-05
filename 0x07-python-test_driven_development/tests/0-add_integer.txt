@@ -18,13 +18,35 @@
 >>> add_integer(2.5, 3)
 5
 
+>>> add_integer(0, 0)
+0
+
+>>> add_integer(1, -1)
+0
+
+>>> add_integer(2147483647, 1)
+2147483648
+
+>>> add_integer(-2147483648, -1)
+-2147483649
+
+>>> add_integer([], 1)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+
+>>> add_integer(1, {})
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+			
 >>> add_integer("2", 3)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
 
 >>> add_integer(2, "3")
-Traceback (most recent call last)
+Traceback (most recent call last):
 ...
 TypeError: b must be an integer
 	    

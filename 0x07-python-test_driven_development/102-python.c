@@ -18,7 +18,7 @@ Py_ssize_t length;
 if (!PyUnicode_Check(p))
 {
 printf("Invalid String Object\n");
-return (0);
+exit(1)
 }
 
 str = (PyUnicodeObject *)p;
