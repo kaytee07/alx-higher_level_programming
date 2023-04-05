@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+"""using numPy to multiply matrices"""
 import numpy as np
 
 
