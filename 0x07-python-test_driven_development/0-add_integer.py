@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """project on adding integers"""
+
+
 def add_integer(a, b=98):
     """accept twi integers and adds them"""
     if type(a) not in [int, float]:
