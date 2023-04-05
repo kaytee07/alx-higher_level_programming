@@ -1,9 +1,15 @@
 #!/usr/bin/python3
+"""unittest for max_integer ([...])"""
 
 import unittest
 from max_integer import max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
+
+    def test_docstring(self):
+        self.assertIsNotNone(max_integer.__doc__)
+
     def test_empty_list(self):
         self.assertEqual(max_integer([]), None)
 
@@ -27,3 +33,6 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_strings(self):
         self.assertRaises(TypeError, max_integer, ["a", "b", "c"])
+
+    if __name__ == "__main__":
+        unittest.main()
