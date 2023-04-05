@@ -1,8 +1,8 @@
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
     """Multiplies two matrices using NumPy"""
-
 
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
@@ -12,7 +12,6 @@ def lazy_matrix_mul(m_a, m_b):
 
     m_a = np.array(m_a)
     m_b = np.array(m_b)
-
 
     if m_a.size == 0 or m_a.shape[1] == 0:
         raise ValueError("m_a can't be empty")

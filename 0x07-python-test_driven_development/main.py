@@ -1,5 +1,15 @@
 #!/usr/bin/python3
-lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+add_integer = __import__('0-add_integer').add_integer
 
-print(lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
-print(lazy_matrix_mul([[1, 2]], [[3, 4], [5, 6]]))
+print(add_integer(1, 2))
+print(add_integer(100, -2))
+print(add_integer(2))
+print(add_integer(100.3, -2))
+try:
+    print(add_integer(4, "School"))
+except Exception as e:
+    print(e)
+try:
+    print(add_integer(None))
+except Exception as e:
+    print(e)
