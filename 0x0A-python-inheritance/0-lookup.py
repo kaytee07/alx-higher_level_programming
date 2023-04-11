@@ -1,9 +1,7 @@
-#!/usr/bin/python
-"""this program print all atribute and methods of an object"""
+#!/usr/bin/python3
+"""Defines an object attribute lookup function."""
 
 
 def lookup(obj):
-    """
-    return all the attribute and methods of a class in a list
-    """
-    return dir(obj)
+    """Return a list of an object's available attributes."""
+    return (dir(obj))
