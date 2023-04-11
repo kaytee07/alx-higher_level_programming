@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """
 return true if object is an instance of, or inherited from
 the specified class otherwise false
