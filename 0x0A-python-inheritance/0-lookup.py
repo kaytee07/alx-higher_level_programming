@@ -8,4 +8,4 @@ def lookup(obj):
     Args:
         obj: this is the class whose methods and attr are returned
     """
-    return dir(obj)
+    return (dir(obj))
