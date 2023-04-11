@@ -1,0 +1,9 @@
+#!/usr/bin/python3
+"""
+return true if object is an instance of class otherwise
+False
+"""
+
+
+def is_same_class(obj, a_class):
+    return isinstance(obj, a_class)
