@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-This module defines a function for reading and
-printing the contents of a text file
+This module defines a function for reading and printing the cont
 """
 
 
