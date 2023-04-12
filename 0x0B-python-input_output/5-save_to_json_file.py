@@ -7,7 +7,7 @@ import json
 
 
 def save_to_json_file(my_obj: object, filename: str) -> None:
-    """Converts the specified Python object to a JSON 
+    """Converts the specified Python object to a JSON
     string and writes it to a file.
 
     Args:
