@@ -4,7 +4,7 @@ This module defines a function for reading and printing the cont
 """
 
 
-def print_file_contents(filename: str = "") -> None:
+def read_file(filename: str = "") -> None:
     """
     Opens the specified UTF8-encoded text file and prints its
     """

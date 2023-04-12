@@ -5,7 +5,7 @@ UTF8-encoded text file
 """
 
 
-def append_to_file(filename: str = "", text: str = "") -> int:
+def append_write(filename: str = "", text: str = "") -> int:
     """
     Opens the specified UTF8-encoded text file and
     appends the given text to the end of the file.
