@@ -18,9 +18,9 @@ class Student:
         attributes
         included in the list.
         """
-        if attrs is not None and all(isinstance(attr, str) for attr in attrs):
-            return \
-                {attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)}
+        if (type(attrs) == list and
+                all(type(ele) == str for ele in attrs)):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         return self.__dict__
 
     def reload_from_json(self, json: dict) -> None:
