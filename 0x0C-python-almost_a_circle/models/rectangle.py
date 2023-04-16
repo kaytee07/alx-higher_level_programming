@@ -1,0 +1,120 @@
+#!/usr/bin/python3
+"""
+a rectangle class that inherit from the base
+"""
+from models.base import Base
+
+
+class Rectangle(Base):
+    """Rectangle class that inherit it base from the Base class"""
+
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        this is the construvtor that set various cvalues when 
+        creating an instance of the Rectangle class
+        Args:
+             width: this is the width of the rectangle
+             height: this is the height of the rectangle
+             x: this is value x
+             y: this is the value of y
+        """
+        super().__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
+    @property
+    def width(self):
+        """this is a getter method that get the value of width"""
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        """
+        this is a setter method that set the value of width
+        Args:
+             value: this is the value to assign to the 
+             width private variable
+        """
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be > 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        """this is a getter method that get the value of height"""
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        """
+        this is a setter method that set the value of height
+        Args:
+             value: this is the value to assign to the 
+             height private variable
+        """
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be > 0")
+        self.__height = value
+
+    @property
+    def x(self):
+        """this is a getter method that get the value of x"""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """
+        this is a setter method that set the value of x
+        Args:
+             value: this is the value to assign to the 
+             x private variable
+        """
+        if not isinstance(value, int):
+            raise TypeError("x must be an integer")
+        if value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = value
+
+    @property
+    def y(self):
+        """this is a getter method that get the value of y"""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """
+        this is a setter method that set the value of y
+        Args:
+             value: this is the value to assign to the 
+             y private variable
+        """
+        if not isinstance(value, int):
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
+
+    def area(self):
+        """this methods print the area of a rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        """
+        this method print height and width of the rectangle
+        with #
+        """
+        for i in range(self.height):
+            for i in range(self.width):
+                print("#", end="")
+            print()
+
+    def __str__(self):
+        """print the user friendly decription of the class"""
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} \
+- {self.width}/{self.height}"
