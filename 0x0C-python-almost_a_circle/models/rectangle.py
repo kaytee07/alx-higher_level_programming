@@ -91,7 +91,7 @@ class Rectangle(Base):
         """
         this is a setter method that set the value of y
         Args:
-             value: this is the value to assign to the 
+             value: this is the value to assign to the
              y private variable
         """
         if not isinstance(value, int):
@@ -109,7 +109,11 @@ class Rectangle(Base):
         this method print height and width of the rectangle
         with #
         """
+        for i in range(self.y):
+            print()
         for i in range(self.height):
+            for i in range(self.x):
+                print(" ", end="")
             for i in range(self.width):
                 print("#", end="")
             print()
