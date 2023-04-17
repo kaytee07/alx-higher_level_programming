@@ -137,3 +137,9 @@ class TestSquare(unittest.TestCase):
         s = Square(1, 3, 5, 7)
         with self.assertRaises(TypeError):
             s.update(size="twenty")
+
+    def test_to_dictionary(self):
+        """Test the to_dictionary method of Square"""
+        s = Square(10, 20, 6, 7)
+        d = {'id': 7, 'width': 10, 'height': 10, 'x': 20, 'y': 6}
+        self.assertEqual(s.to_dictionary(), d)

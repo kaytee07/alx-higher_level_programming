@@ -10,7 +10,7 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        this is the construvtor that set various cvalues when 
+        this is the construvtor that set various cvalues when
         creating an instance of the Rectangle class
         Args:
              width: this is the width of the rectangle
@@ -34,7 +34,7 @@ class Rectangle(Base):
         """
         this is a setter method that set the value of width
         Args:
-             value: this is the value to assign to the 
+             value: this is the value to assign to the
              width private variable
         """
         if type(value) != int:
@@ -53,7 +53,7 @@ class Rectangle(Base):
         """
         this is a setter method that set the value of height
         Args:
-             value: this is the value to assign to the 
+             value: this is the value to assign to the
              height private variable
         """
         if type(value) != int:
@@ -72,7 +72,7 @@ class Rectangle(Base):
         """
         this is a setter method that set the value of x
         Args:
-             value: this is the value to assign to the 
+             value: this is the value to assign to the
              x private variable
         """
         if type(value) != int:
@@ -119,6 +119,7 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
+        """update attribute using kwargs and args"""
         if len(args) > 0:
             if len(args) >= 1:
                 self.id = args[0]
@@ -142,6 +143,16 @@ class Rectangle(Base):
                     self.x = value
                 if key == "y":
                     self.y = value
+
+    def to_dictionary(self):
+        """return dictionary representation of rectangle"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
 
     def __str__(self):
         """print the user friendly decription of the class"""

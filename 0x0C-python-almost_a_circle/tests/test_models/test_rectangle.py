@@ -152,5 +152,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             r.update(height="height")
 
+    def test_to_dictionary(self):
+        r = Rectangle(10, 20, 5, 6, 7)
+        d = {'id': 7, 'width': 10, 'height': 20, 'x': 5, 'y': 6}
+        self.assertEqual(r.to_dictionary(), d)
+
     if __name__ == '__main__':
         unittest.main()
