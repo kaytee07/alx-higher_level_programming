@@ -5,6 +5,7 @@ creating a class call base
 import json
 import csv
 
+
 class Base:
     __nb_objects = 0
 
@@ -76,63 +77,77 @@ class Base:
         except FileNotFoundError:
             return []
 
-    @staticmethod
-    def _to_csv(rectangle):
-        """Return the CSV string representation of rectangle."""
-        if isinstance(rectangle, Rectangle):
-            return "{},{},{},{},{}".format(rectangle.id, rectangle.width,
-                                           rectangle.height, rectangle.x,
-                                           rectangle.y)
-        elif isinstance(rectangle, Square):
-            return "{},{},{},{}".format(rectangle.id, rectangle.size,
-                                         rectangle.x, rectangle.y)
-
-    @staticmethod
-    def _from_csv(row):
-        """Return a Rectangle or Square instance from a CSV row."""
-        fields = row.split(",")
-        if len(fields) == 5:
-            # Rectangle: <id>,<width>,<height>,<x>,<y>
-            return Rectangle(int(fields[0]), int(fields[1]), int(fields[2]),
-                              int(fields[3]), int(fields[4]))
-        elif len(fields) == 4:
-            # Square: <id>,<size>,<x>,<y>
-            return Square(int(fields[0]), int(fields[1]), int(fields[2]),
-                           int(fields[3]))
-        else:
-            raise ValueError("Invalid CSV row: {}".format(row))
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
         """Write the CSV string representation of list_objs to a file."""
-        if list_objs is None:
-            list_objs = []
-        filename = cls.__name__ + '.csv'
-        with open(filename, mode='w', newline='') as file:
-            writer = csv.writer(file)
-            for obj in list_objs:
-                if cls.__name__ == 'Rectangle':
-                    writer.writerow\
-                        ([obj.id, obj.width, obj.height, obj.x, obj.y])
-                elif cls.__name__ == 'Square':
-                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+        filename = cls.__name__ + ".csv"
+        with open(filename, "w", newline="") as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    writer.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
         """Return a list of instances from a CSV file."""
-        filename = cls.__name__ + '.csv'
+
+        filename = cls.__name__ + ".csv"
         try:
-            with open(filename, mode='r', newline='') as file:
-                reader = csv.reader(file)
-                if cls.__name__ == 'Rectangle':
-                    fields = ['id', 'width', 'height', 'x', 'y']
-                elif cls.__name__ == 'Square':
-                    fields = ['id', 'size', 'x', 'y']
-                instances = []
-                for row in reader:
-                    data = {field: int(value) for field, value in zip(fields, row)}
-                    instance = cls.create(**data)
-                    instances.append(instance)
-                return instances
-        except FileNotFoundError:
+            with open(filename, "r", newline="") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                list_dicts = csv.DictReader(csvfile, fieldnames=fieldnames)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in list_dicts]
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw Rectangles and Squares using the turtle module.
+        Args:
+            list_rectangles (list): A list of Rectangle objects to draw.
+            list_squares (list): A list of Square objects to draw.
+        """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#b7312c")
+        turt.pensize(3)
+        turt.shape("turtle")
+
+        turt.color("#ffffff")
+        for rect in list_rectangles:
+            turt.showturtle()
+            turt.up()
+            turt.goto(rect.x, rect.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(rect.width)
+                turt.left(90)
+                turt.forward(rect.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turt.color("#b5e3d8")
+        for sq in list_squares:
+            turt.showturtle()
+            turt.up()
+            turt.goto(sq.x, sq.y)
+            turt.down()
+            for i in range(2):
+                turt.forward(sq.width)
+                turt.left(90)
+                turt.forward(sq.height)
+                turt.left(90)
+            turt.hideturtle()
+
+        turtle.exitonclick()
