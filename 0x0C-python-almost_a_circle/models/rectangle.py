@@ -37,7 +37,7 @@ class Rectangle(Base):
              value: this is the value to assign to the 
              width private variable
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("width must be an integer")
         if value < 0:
             raise ValueError("width must be > 0")
@@ -56,7 +56,7 @@ class Rectangle(Base):
              value: this is the value to assign to the 
              height private variable
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("height must be an integer")
         if value < 0:
             raise ValueError("height must be > 0")
@@ -75,7 +75,7 @@ class Rectangle(Base):
              value: this is the value to assign to the 
              x private variable
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("x must be an integer")
         if value < 0:
             raise ValueError("x must be >= 0")
@@ -94,7 +94,7 @@ class Rectangle(Base):
              value: this is the value to assign to the
              y private variable
         """
-        if not isinstance(value, int):
+        if type(value) != int:
             raise TypeError("y must be an integer")
         if value < 0:
             raise ValueError("y must be >= 0")
@@ -117,6 +117,31 @@ class Rectangle(Base):
             for i in range(self.width):
                 print("#", end="")
             print()
+
+    def update(self, *args, **kwargs):
+        if len(args) > 0:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            for key, value in kwargs.items():
+                if key == "id":
+                    self.id = value
+                if key == "width":
+                    self.width = value
+                if key == "height":
+                    self.height = value
+                if key == "x":
+                    self.x = value
+                if key == "y":
+                    self.y = value
 
     def __str__(self):
         """print the user friendly decription of the class"""
