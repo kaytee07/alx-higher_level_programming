@@ -1,0 +1,7 @@
+-- script that a create atable called first_table in the current db
+-- in our mySQL server
+
+CREATE TABLE IF NOT EXISTS first_table (
+id INT,
+name VARCHAR(256)
+);
