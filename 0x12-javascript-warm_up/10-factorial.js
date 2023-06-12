@@ -1,5 +1,5 @@
 #!/usr/bin/node
-if (process.argv.length <= 2 || !Number(process.argv[2])) {
+if (process.argv.length <= 2 || !Number(process.argv[3])) {
   console.log(1);
 } else {
   let factorial = 1;
