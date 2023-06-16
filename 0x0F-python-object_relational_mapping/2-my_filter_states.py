@@ -20,6 +20,7 @@ def list_all_search(username, password, database, search):
     cursor.close()
     db.close()
 
+
 if __name__ == '__main__':
     if len(sys.argv) == 5:
         user = sys.argv[1]
