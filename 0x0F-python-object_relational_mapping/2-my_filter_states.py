@@ -4,7 +4,7 @@ import MySQLdb
 import sys
 
 
-def list_all_search(username, password, database, search):
+def search_states(username, password, database, state_name):
     """
     print state that matches the name searched
     """
@@ -12,8 +12,8 @@ def list_all_search(username, password, database, search):
                          user=username, passwd=password, db=database)
 
     cursor = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
-    cursor.execute(query, (search,))
+    query = f"SELECT * FROM states WHERE name = '{state_name}' ORDER BY id ASC"
+    cursor.execute(query)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
@@ -26,7 +26,7 @@ if __name__ == '__main__':
         user = sys.argv[1]
         passwd = sys.argv[2]
         db = sys.argv[3]
-        search = sys.argv[4]
-        list_all_search(user, passwd, db, search)
+        state_name = sys.argv[4]
+        search_states(user, passwd, db, state_name)
     else:
         print("Usage: enter email password db use")
