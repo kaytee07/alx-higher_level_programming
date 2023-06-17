@@ -4,27 +4,14 @@ import MySQLdb
 import sys
 
 
-def list_all_state_N(username, password, database):
-    """
-    list all state that start with capital N from hbtn_0e_0_usa db
-    """
-    db = MySQLdb.connect(host='localhost', port=3306,
-                         user=username, passwd=password, db=database)
+if __name__ == '__main__':
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id"
     cursor = db.cursor()
-    cursor.execute('SELECT * FROM states WHERE name LIKE "N%" ORDER BY id ASC')
+    cursor.execute(query)
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-
     cursor.close()
     db.close()
-
-
-if __name__ == '__main__':
-    if len(sys.argv) == 4:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        database = sys.argv[3]
-        list_all_state_N(username, password, database)
-    else:
-        print("Usage: enter email password db use")
