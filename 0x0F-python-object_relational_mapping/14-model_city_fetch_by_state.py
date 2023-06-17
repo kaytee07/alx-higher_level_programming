@@ -1,4 +1,4 @@
-#!/bin/usr/python3
+#!/usr/bin/python3
 """print all city and state """
 import sys
 from model_state import Base, State
