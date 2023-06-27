@@ -9,6 +9,6 @@ then
 fi
 
 url=$1
-response=$(curl -sI $url)
+response=$(curl -sI "$url")
 content_length=$( echo "$response" | grep -i 'Content-Length' | awk '{print $2}')
 echo "$content_length"
