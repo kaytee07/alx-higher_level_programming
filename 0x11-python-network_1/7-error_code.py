@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Script send sreq toURL and display body"""
 import requests
 import sys
 
