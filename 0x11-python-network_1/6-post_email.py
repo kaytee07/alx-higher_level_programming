@@ -6,5 +6,5 @@ import sys
 
 value = sys.argv[2]
 url = sys.argv[1]
-res = requests.post(url, data={'key': value})
+res = requests.post(url, email={'key': value})
 print(res)
