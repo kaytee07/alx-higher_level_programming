@@ -5,5 +5,5 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    res = requests.get(sys.argv[1])
-    print(res.headers.get("X-Request-Id"))
+    res = requests.get(sys.argv[1], data={'email': sys.argv[2]})
+    print('Your email is:', res)
