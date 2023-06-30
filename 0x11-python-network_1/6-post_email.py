@@ -5,5 +5,8 @@ import requests
 import sys
 
 if __name__ == '__main__':
-    res = requests.post(sys.argv[1], data={'email': sys.argv[2]})
-    print('Your email is:', res.text)
+    url = sys.argv[1]
+    email = sys.argv[2]
+    data = {'email': email}
+    response = requests.post(url, data=data)
+    print('Your email is:', response.text)
