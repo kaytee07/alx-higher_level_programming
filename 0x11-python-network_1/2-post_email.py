@@ -10,7 +10,7 @@ if __name__ == '__main__':
     url = sys.argv[1]
     mail = sys.argv[2]
     body = {'email': mail}
-    params = urllib.parse.urlencode(body).encode('utf-8')
+    params = urllib.parse.urlencode(body).encode('ascii')
     req = urllib.request.Request(url, body, method='POST')
     with urllib.request.urlopen(req) as response:
         res = response.read().decode('utf-8')
