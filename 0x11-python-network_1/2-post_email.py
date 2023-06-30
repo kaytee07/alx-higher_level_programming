@@ -5,11 +5,11 @@ import urllib.request
 import urllib.parse
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     url = sys.argv[1]
-    body = {'email': sys.argv[2]}
-    params = urllib.parse.urlencode(body).encode('ascii')
-    req = urllib.request.Request(url, body)
-    with urllib.request.urlopen(req) as response:
-        res = response.read().decode('utf-8')
-        print(res)
+    value = {"email": sys.argv[2]}
+    data = urllib.parse.urlencode(value).encode("ascii")
+
+    request = urllib.request.Request(url, data)
+    with urllib.request.urlopen(request) as response:
+        print(response.read().decode("utf-8"))
