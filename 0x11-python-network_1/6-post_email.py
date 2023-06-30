@@ -4,8 +4,6 @@
 import requests
 import sys
 
-url = sys.argv[1]
-email = sys.argv[2]
-data = {'email': email}
-res = requests.post(url, data=data)
-print(res.text)
+if __name__ == '__main__':
+    res = requests.get(sys.argv[1])
+    print(res.headers.get("X-Request-Id"))
