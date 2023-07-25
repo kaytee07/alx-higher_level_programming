@@ -24,6 +24,8 @@ request(option, function (err, res, body) {
       } else {
         completed[user]++;
       }
+    } else {
+	console.log('An error occured')
     }
   }
 
